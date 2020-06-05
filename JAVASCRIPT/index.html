@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=go t, initial-scale=1.0">
+    <title>Document write</title>
+    
+    <style>
+        #spantxtbox li {
+          position: relative;
+           cursor: pointer; 
+           padding: 12px 8px 12px 20px;
+           list-style-type:none;
+           background: white;
+        }
+        #spantxtbox li:nth-child(odd) {
+  background: #181bd6;
+}        
+        #spantxtbox li:hover{
+            background-color: gray;
+        }
+        .close{
+            position: absolute;
+            right:0px;
+            top:0px;
+            padding: 12px 12px 12px 14px;
+            background:white;
+        }
+    .close:hover{
+        position: absolute;
+        background: red;
+    }
+
+ ul li.checkbox_box{
+     background-color: gray;
+     color: white;
+        text-decoration: line-through;
+    }
+    ul li.checkbox_box::before{
+        content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 66px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+   }
+
+    </style>
+</head>
+<body>
+    go to the server 
+    <script>
+    </script>     
+    <div id="mydiv">
+        <ul id="mylist">
+            <li class="abc">abc</li>
+            <li class="def">def</li>
+            <li class="ghi">ghi</li>
+            <li class="jkl">jkl</li>
+            <li class="mno">mno</li>
+            <li class="pqr">pqr</li>
+        </ul>
+        <p>dhflkh fla</p>
+
+       
+    </div>
+    <button id="addnew" onclick="adddnewele()" >AddNew</button>
+    <br><br>
+        <input type="text" id="inputid" placeholder="type text here">
+        <button type="button" onclick="newlitag()" >Add New TextBox</button>
+        <div id="txtspan">
+<ul id="spantxtbox">
+    <li>aman</li>
+    <li>rahul</li>
+    <li class="checkbox_box">amit</li>
+    <li>sachin</li>
+</ul>
+    </div>
+
+<div>
+        <ul id="asas"></ul>
+        <ul id="abcd">
+            <li>123</li>
+            <li>456</li>
+            <li>678</li>
+            <li>901</li>
+        </ul> 
+        <button id="btbtn" onclick="funcnodeabcd()">click</button>
+    </div>
+
+    <p>Create Text using AppendChile</p>
+    <div>
+        <ul id="appendul">
+            <li>water</li>
+            <li >laptop</li>
+            <li>keyword</li>
+        </ul>
+        <button id="append_btn" type="button" onclick="appendtxt()">Click to add New</button>
+    </div>
+<script src="index.js"></script>
+</body>
+</html>

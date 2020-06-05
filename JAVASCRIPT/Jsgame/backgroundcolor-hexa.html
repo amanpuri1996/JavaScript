@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Background Color</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> 
+</head>
+<body>
+    <div style="padding: 322px 0px 0px 582px;"> 
+           <button id="btn" class="btn btn-danger" onclick="func_back_hexa()">Click Me</button>
+    </div>
+ <script>
+  
+        const body  = document.querySelector('body');
+    const btn = document.getElementById('btn_back_clr');
+    body.style.backgroundColor="blue";
+    let colors = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
+    function func_back_hexa(){
+        let hexa="#";
+    for(let i=0;i<6;i++){
+    const index =  Math.floor(Math.random()*colors.length);
+        hexa += colors[index];
+    }
+    document.querySelector("body").style.backgroundColor=hexa;
+//    body.style.backgroundColor= "#"+hexa;
+    console.log(hexa);
+
+    
+   // document.write(hexa);
+    }
+   
+    
+</script> 
+</body>
+</html>

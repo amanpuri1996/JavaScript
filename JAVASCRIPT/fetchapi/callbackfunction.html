@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul id="ul"></ul>
+    </div>
+    <script>
+        //data coming from any server
+        const students = [{ name: "Aman", subject: "Javascript" },
+        { name: "monu", subject: "HTML" }];
+        console.log("name : " + students[0].name + " subject : " + students[0].subject);
+        //function enroll Students
+        function enroll_student(student,callback) {
+            setTimeout(function () {
+                students.push(student);
+                console.log("student has been added");
+                callback();
+            }, 1000);
+        }
+
+        //function get students
+        function get_students() {
+            setTimeout(function () {
+                let str = "";
+                students.forEach(function (student) {
+                    str += `<li> ${student.name} </li>`
+                });
+                console.log("student have been fetch");
+                document.getElementById('ul').innerHTML = str;
+            }, 5000);
+        }
+
+        let newstudent = { name: "rahul", subject: "python" }
+        enroll_student(newstudent,get_students);
+       // get_students();
+
+       var multiplyES5 = function(x, y) {
+  return x * y;
+};
+
+// ES6
+var multiplyES6 = (x, y) => { return x * y };
+console.log(multiplyES6(6,9));
+    
+var docLogEs5 = function docLog() {
+    console.log(document);
+};
+
+
+    </script>
+</body>
+
+</html>

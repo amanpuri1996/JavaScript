@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul id="ul"></ul>
+    </div>
+    <script>
+        function async() {
+            let endstage = "End stage";
+            console.log("initial stage");
+            setTimeout(() => {
+                console.log("mid  stage");
+            }, 5000);
+            setTimeout(function () {
+                console.log("new stage");
+            }, 8000);
+            console.log(endstage);
+        }
+        //    async();
+
+        // let data = new Promise(function (resolve, reject) {
+        //     setTimeout(() => {
+        //         resolve("promise new state");
+        //     }, 3000);
+        // })
+        // data.then(function (val) {
+        //     console.warn(data);
+        // })
+
+        // data.then(function(val){
+        //     console.log(val);
+        // })
+        // console.warn(data)
+        /*
+          console.log("Promise in javascript");
+          function func_promise() {
+              return new Promise(function (resolve, reject) {
+                  setTimeout(() => {
+                      const error = false;
+                      if (!error) {
+                          console.log("work in progress");
+                          resolve();
+                      }
+                      else {
+                          console.log("Sorry i can't do this");
+                          reject("error in reject function");
+                      }
+                  }, 1000);
+              });
+          }
+          func_promise().then(function () {
+              console.log("Aman : done bro");
+          }).catch(function (error) {
+              console.log("Error Found "+error);
+          });
+          */
+
+        console.log("another example of Promise");
+        // var students = [
+        //     { name: "Aman puri", subject: "math" },
+        //     { name: "ravi", subject: "physics" },
+        //     { name: "mukesh", subject: "bio" }
+        // ]
+
+        const students = [
+            { name: "harry", subject: "JavaScript" },
+            { name: "Rohan", subject: "Machine Learning" }
+        ]
+        function func_promise_std(student) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    let error = false;
+                    students.push(student);
+                    if (!error) {
+                        resolve();
+                    }
+                    else {
+                        console.log("Sorry i can't do this");
+                        reject("error in reject function");
+                    }
+                }, 1000);
+            });
+        }
+
+        function get_students() {
+            setTimeout(function () {
+                let str = "";
+                students.forEach(function (student) {
+                    str += `<li> ${student.name} </li>`
+                });
+                console.log("student have been fetch");
+                document.getElementById('ul').innerHTML = str;
+            }, 5000);
+        }
+        // func_promise_std();
+        // get_student();
+        let newStudent = { name: "Sunny", subject: "Python" }
+        func_promise_std(newStudent).then(get_students).catch(function (error) {
+            console.log("Error Found " + error);
+        });
+
+
+    </script>
+</body>
+
+</html>

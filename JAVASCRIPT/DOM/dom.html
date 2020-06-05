@@ -1,0 +1,104 @@
+<html>
+<head>
+<style>
+#box1{
+width:200px;
+height:200px;
+background-color:blue;
+position:absolute;
+}
+#box2{
+width:20px;
+height:20px;
+background-color:red;
+position:absolute;
+}
+#box3{ 
+bottom:-180px;
+left:0px;
+width:20px;
+height:20px;
+background-color:green;
+position:absolute;
+}
+</style>
+</head>
+<body>
+<h1>This is my first page</h1>
+<p id="demo"></p>
+<p class="democlass"></p>
+<p id="intro">Hello World</p>
+<p id="demoa"></p>
+<p id="pa"></p>
+<form id="form1" action="" >
+Name : <input id="name" type="text" value="aman">
+Age : <input id="name" type="text" value="23">
+ <input id="name" type="button" name="Aman" value="Submit">
+</form>
+<p id="formp"></p>
+<script type = "text/javascript">
+
+document.getElementById('demo').innerHTML = "Aman";
+document.getElementById('demo').style.color = "red";
+
+//document.getElementByClassName('democlass').innerHTML = "demo class";
+
+var find_demo = document.getElementById("intro");
+document.getElementById("demoa").innerHTML = "Change Html Content " + find_demo.innerHTML;
+
+var ptag = document.getElementsByTagName("p");
+document.getElementById('pa').innerHTML="huhhhhhhh" + ptag[0].innerHTML+ptag[1].innerHTML+ptag[2].innerHTML+ptag[3].innerHTML;
+
+function func_form(){
+var x = document.forms["form1"];
+var text = "";
+var i;
+for(i=0;i<x.length;i++){
+text += x.elements[i].value + " ";
+}
+document.getElementById('formp').innerHTML=text;
+document.write(text);
+}
+func_form();
+
+function animation(){
+var div2 = document.getElementById('box2');
+var div3 = document.getElementById('box3');
+var pos = 0;
+var bpos = -180;	
+var mmoveboxid =setInterval(frame,10);
+function frame(){
+if(pos == 180){
+clearInterval(mmoveboxid);
+}
+else{
+pos++;
+div2.style.top= pos+"px";
+div2.style.left= pos+"px";
+//div3.style.top= -pos+"px";
+//div3.style.left= pos+"px";
+
+}
+}
+}
+function mover(obj){
+obj.innerHTML="Hello Boss";
+obj.style.backgroundColor="purple";
+}
+function mout(obj){
+obj.innerHTML="Byee Boss";
+obj.style.backgroundColor="pink";
+}
+</script>
+<p><button onclick="animation()">Click Me</button></p> 
+<div id="box1">
+<div id="box2"></div>
+<div id="box3q"></div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div style="background-color:green;width:74;height:22px;padding:63px;" onmouseover='mover(this)' onmouseout='mout(this)'>Click Me</div>
+<br>
+<div style="background-color:yellow;width:74;height:22px;padding:63px;" onmouseup='mover(this)' onmousedown='mout(this)'>Click Me</div>
+
+</body>
+</html>

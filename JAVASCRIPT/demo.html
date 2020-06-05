@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function func(){
+var demo =  document.getElementById("demo").innerHTML="Hello World";
+}
+function func1(){
+var demo1 =  document.getElementById("demo").innerHTML="My First JavaScript Program";
+}
+
+function func2(){
+var demo1 =  document.getElementById("demo").innerHTML=Date();
+}
+
+function func3(){
+var demo1 =  document.getElementById("demo").innerHTML=9+2;
+}
+
+function func4(){
+
+document.getElementById("demo2").innerHTML=234+13;
+var cloths = ["shirt","pants","t-Shirt"];
+cloths.pop();
+var name="My Name is Aman Puri.";
+var stay="I Stay in faridbad";
+var stream= "I am Web developer or web designer"
+var x=12;
+x+=12;
+//document.getElementById('demo3').innerHTML=name+stay+stream+" "+x;
+
+var age=12;
+var candrive;
+<!-- if(age>10) -->
+<!-- { -->
+<!-- candrive='Yes'; -->
+<!-- } -->
+<!-- else{ -->
+<!-- candrive='No'; -->
+<!-- } -->
+
+candrive=age>10 ? 'Yes' : 'No';
+document.getElementById('demo3').innerHTML=name+stay+stream+" "+x+" "+candrive;
+
+}
+document.write(4+231);
+document.write("\n \n I m a good boy <Br>");
+
+//window.alert(132+243);
+console.log(23+12);
+
+
+////
+
+
+function display()
+{
+document.writeln("Name Funciton");
+document.writeln("Name Funciton1");
+document.writeln("Name Funciton2");
+document.writeln("Name Funciton3");
+
+document.writeln("Hello World!");
+document.writeln("Have a nice day!");
+}
+
+function newwindow()
+{
+var mywindow =  window.open(" ","MsgWindow","width=80px,height=50px");
+mywindow.document.write("<h1>This is My New Window Page which size width is 200px and height:150px </h1>")
+}
+document.writeln("Hello World!");
+document.writeln("Have a nice day! <br>");
+
+////////////Map.get()
+
+var myMap =  new Map();
+myMap.set(0, 'amanpuri hr51');
+myMap.set(1, 'sumit delhi');
+myMap.set(2, 'deep noida');
+myMap.set(3, 'sunil gaziabad');
+document.write(myMap.get(0),"<br>");
+document.write(myMap.get(2),"<br>");
+
+
+
+//reverse string
+
+function reversestring(){
+var str= document.getElementById('demo4').innerHTML="AMANPURIKUMAR";
+//STEP 1use the split method to resturn the new array
+var splitstring =  str.split(""); // SPLIT [AMANPURI] TO ["A" "M" "A" "N" "P" "U" "R" "I"]
+
+//STEP 2 use the reverse method to reverse the new created array
+var reversearray =  splitstring.reverse(); // var reversearray =  ["A" "M" "A" "N" "P" "U" "R" "I"].reverse(); //["I" "U" "R" "P" "N" "A" "M" "A"]
+
+//step 3 use the join method to join the all element of array into a string
+var joinarray =  reversearray.join("");
+
+var str= document.getElementById('demo4').innerHTML=joinarray;
+	
+}
+
+//reverse string without using any method
+function reverse_string_without_method(str)
+{
+var len =  str.length, result="";
+for( var i=0; i <= len-1; i++)
+{
+result=result+str[len-i-1];
+}
+return result;
+}
+var str="ABCDEFGHIJKLMANOPRSTUVWXYZ";
+str=reverse_string_without_method(str);
+document.write(str);
+
+
+
+//object
+function func_obj(){
+var person={
+firstname:"aman",
+lastname:"puri",
+state:"haryana",
+city:"faridbad",
+year:23
+}
+
+document.writeln("My Name is"+person.firstname+". I am "+person.year+" Years old. I Live in "+person.city+ " (" +person.state+ ")" );
+}
+func_obj();
+
+</script>
+<script>
+
+
+var person={
+firstname:"aman",
+lastname:"puri",
+state:"haryana",
+city:"faridbad",
+year:23,
+fullname:function(){
+return this.firstname+ " "+ this.lastname;
+}
+};
+document.writeln(" <br> My Name is "+person.fullname()+"" );
+
+function func_this()
+{
+	var sstr=this;
+	var str =  {
+	name:	"ravi",
+	lastname:function func_this_obj()
+	{
+		return this;
+	}
+	};
+  var x=	document.getElementById('demo6').innerHTML=str.lastname();
+	document.write(sstr);
+}
+
+
+///this undefined
+
+// function func_undefined(){
+// 	return this;
+// }
+// document.getElementById('undefined').innerHTML=func_undefined();
+
+</script>
+<script>
+"use strict";
+function myFunction() {
+  return this;
+}
+myFunction();
+</script>
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+<p id="undefined"></p>
+
+<p id="demo">JavaScript can change HTML content.</p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6">dsfghjkl;</p>
+
+<button type="button" onclick='func_this()'>This</button>
+
+<button type="button" onclick='func()'>Hide Content</button>
+
+<button type="button" onclick='func1()'>Show Content</button>
+
+<button type="button" onclick='func2()' >DateTime</button>
+<button type="button" onclick='func3()' >Sum</button>
+<button type="button" onclick='setTimeout(newwindow,5000)'>New Window</button>
+<button type="button" onclick='return reversestring()'>Reverse String</button>
+<button type="button" onclick='rev_string()'>Reverse String</button>
+<button type="button" onclick="document.getElementById('demo5').innerHTML=Date();">DateTime</button>
+
+<button type="button" onclick='this.innerHTML=Date();'>btn DateTime</button>
+
+
+</body>
+</html>

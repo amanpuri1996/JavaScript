@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Background Color</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>   
+</head>
+<body>
+    <div style="padding: 306px 0 0 636px;">
+    <button id="btn_backgroud" class="btn btn-success">Click Me</button>
+</div>
+
+<script>
+    const btn = document.getElementById("btn_backgroud");
+    const body = document.querySelector('body');
+    const color = ["red","blue","green","orange","purple","red","pink","yellow","black","white","voilet","skyblue","golder","silver","brown"];
+    body.style.backgroundColor="red";
+    btn.addEventListener("click",chang_back_color);
+function chang_back_color(){
+const color_index = parseInt(Math.random()*color.length);
+body.style.backgroundColor=color[color_index]
+}
+</script>
+</body>
+</html>
