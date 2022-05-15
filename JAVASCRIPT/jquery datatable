@@ -1,0 +1,16 @@
+			
+      ///sorting date
+      
+      // add data-order in table
+      		<table
+						class="display"
+						cellspacing="0"
+						width="100%"
+						data-order='[[ 8, "asc" ]]'
+					>
+          
+          $('.display').DataTable({
+				responsive: true,
+				order: [[8, 'desc']], //or asc
+				columnDefs: [{ targets: 8, type: 'date-eu' }],
+			});
